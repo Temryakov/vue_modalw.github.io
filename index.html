@@ -24,7 +24,7 @@
                             cumque, iusto minus, natus, facilis dolorem ut modi officiis similique.
                         </slot>
                     </div>
-                    <button class='main-button' @click="$emit('close')">Close</button>
+                    <button @click="$emit('close')">Close</button>
                   </div>
                 </div>
             </transition>
@@ -51,10 +51,11 @@
                     pariatur aut sunt aliquid, ratione laboriosam vel?
                 </p>
             </div>
-            <h1 style='text-align: center;'>Please, click this button.</h1>
-            <button @click='openModal' class='main-button'>Button</button>
-            <modal v-if="showModal" @close="closeModal">
-              </modal>
+            <div class='main-content__button'>
+              <h1>Please, click this button.</h1>
+              <button @click='openModal'>Open</button>
+            </div>
+            <modal v-if="showModal" @close="closeModal"></modal>
         </div>
     </body>
     <script>
@@ -68,7 +69,7 @@
           el: "#app",
           data: {
             showModal: false,
-            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+            title: 'Modal window'
 
           },
           methods: {
